@@ -52,6 +52,27 @@ T5 = (str(candidates[0]) + ": " + str("{:.0%}".format((total_K/votes))) + " (" +
 T6 = (str(candidates[1]) + ": " + str("{:.0%}".format((total_C/votes))) + " (" + str(total_C) + ")")
 T7 = (str(candidates[2]) + ": " + str("{:.0%}".format((total_L/votes))) + " (" + str(total_L) + ")")
 T8 = (str(candidates[3]) + ": " + str("{:.0%}".format((total_O/votes))) + " (" + str(total_O) + ")")
+T9 = ("-----------------")
+T10 = ("Winner: " + str(candidates[0]))
+T11 = ("-----------------")
+
+output_file = "analysis/poll_analysis.txt"
+
+with open(output_file, "w") as datafile:
+
+    datafile.write(f"""
+    {T1}
+    {T2}
+    {T3}
+    {T4}
+    {T5}
+    {T6}
+    {T7}
+    {T8}
+    {T9}
+    {T10}
+    {T11}
+    """)
 
 print(T1)
 print(T2)
@@ -61,5 +82,10 @@ print(T5)
 print(T6)
 print(T7)
 print(T8)
+print(T9)
+print(T10)
+print(T11)
+
+
 
 
