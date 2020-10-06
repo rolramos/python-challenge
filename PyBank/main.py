@@ -17,9 +17,9 @@ with open(path) as csv_file:
 		months = csv_reader.line_num
 
 months = months - 1
-print("Financial Analysis")
-print("---------------------")
-print("Total months: " + str(months))
+T1 = ("Financial Analysis")
+T2 = ("---------------------")
+T3 = ("Total months: " + str(months))
 
 with open(path) as csv_file:
     csv_reader = csv.reader(csv_file)
@@ -27,7 +27,7 @@ with open(path) as csv_file:
     for row in csv_reader:
         total_list.append(int(row[1]))
     
-print("Total: $" + str(sum(total_list)))
+T4 = ("Total: $" + str(sum(total_list)))
 
 with open(path) as csv_file:
     csv_reader = csv.reader(csv_file)
@@ -36,8 +36,19 @@ with open(path) as csv_file:
         average_change_list.append(int(row[1])-avch)
         avch = int(row[1])
 average_change_list.pop(0)
-print("Average Change: " + str('{:.2f}'.format((sum(average_change_list)/len(average_change_list)))))
+T5 = ("Average Change: " + str('{:.2f}'.format((sum(average_change_list)/len(average_change_list)))))
 
-print("Greatest Increase in Profits: " + str(max(average_change_list)))
-print("Greatest Decrease in Profits: " + str(min(average_change_list)))
-print("-------------------------")
+T6 = ("Greatest Increase in Profits: " + str(max(average_change_list)))
+T7 = ("Greatest Decrease in Profits: " + str(min(average_change_list)))
+T8 = ("-------------------------")
+
+Output = [T1,T2,T3,T4,T5,T6,T7,T8]
+
+print(Output)
+
+output_file = "analysis/financial_analysis.csv"
+
+with open(output_file, "w") as datafile:
+    writer = csv.writer(datafile)
+
+    writer.writerow([T1,T2,T3,T4,T5,T6,T7,T8])
