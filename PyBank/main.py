@@ -42,13 +42,29 @@ T6 = ("Greatest Increase in Profits: " + str(max(average_change_list)))
 T7 = ("Greatest Decrease in Profits: " + str(min(average_change_list)))
 T8 = ("-------------------------")
 
-Output = [T1,T2,T3,T4,T5,T6,T7,T8]
+print(T1)
+print(T2)
+print(T3)
+print(T4)
+print(T5)
+print(T6)
+print(T7)
+print(T8)
 
-print(Output)
-
-output_file = "analysis/financial_analysis.csv"
+output_file = "analysis/financial_analysis.txt"
 
 with open(output_file, "w") as datafile:
-    writer = csv.writer(datafile)
+    #writer = csv.writer(datafile)
+    
+    #writer.writerow([T1,T2,T3,T4,T5,T6,T7,T8])
+    datafile.write(f"""
+    {T1}
+    {T2}
+    {T3}
+    {T4}
+    {T5}
+    {T6}
+    {T7}
+    {T8}
+    """)
 
-    writer.writerow([T1,T2,T3,T4,T5,T6,T7,T8])
